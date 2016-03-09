@@ -3,14 +3,14 @@ fn main() {
 
     // essentials:
     trait Foo {
-    	fn method(&self) -> String;
+        fn method(&self) -> String;
     }
 
     impl Foo for u8 {
-    	fn method(&self) -> String { format!("u8: {}", *self) }
+        fn method(&self) -> String { format!("u8: {}", *self) }
     }
     impl Foo for String {
-    	fn method(&self) -> String { format!("string: {}", *self) }
+        fn method(&self) -> String { format!("string: {}", *self) }
     }
 
     // static dispatch (like c++'s static polymorphism through templates)
@@ -39,4 +39,13 @@ fn main() {
     // this way, no code bloat, no inlining, slower virtual fx calls
     // pointers: Rust doesn't default to pointers (like Java),
     // but thy are used for dynamic dispatch since we'll need to know arg size at compile time.
+
+    // Representation details:
+    // std::raw module contains following TraitObject definition:
+
+    #[allow(dead_code)]
+    /*pub*/ struct TraitObjectCopy {
+        /*pub*/ data: *mut (),   // object pointer
+        /*pub*/ vtable: *mut (), // virtual function table pointer
+    }
 }
