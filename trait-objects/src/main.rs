@@ -48,4 +48,11 @@ fn main() {
         /*pub*/ data: *mut (),   // object pointer
         /*pub*/ vtable: *mut (), // virtual function table pointer
     }
+
+    // object safety.
+    // Not every trait can be made into trait object, rules:
+    // * Trait does not require that Self: Sized
+    // * All trait methods are object-safe
+    //   * method must not have any type parameters
+    //   * method must not use Self
 }
