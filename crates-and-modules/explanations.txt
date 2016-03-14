@@ -1,0 +1,17 @@
+crate - library/package synonym.
+
+each crate has an implicit root module (in lib.rs or main.rs)
+crate can have an ierarchy of submodules.
+
+Sub-modules in separate files:
+modules can be declared as 'mod modname;', Rusr will expect to find either
+ * modname.rs file near or
+ * modname/mod.rs
+
+Note: in these files mod declaration is not needed, it's already been done on includer's side
+
+To make'em accessible using 'extern crate modname', modules need to be declared public, 'pub mod modname;'
+if crate name uses dashes ('uses-dashes'), they'll be automatically converted to underscores ('uses_dashes').
+
+By default Cargo assumes main.rs a root crate (not lib.rs).
+Having both main.rs and lib.rs is common for executable crates.
