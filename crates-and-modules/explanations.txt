@@ -15,3 +15,8 @@ if crate name uses dashes ('uses-dashes'), they'll be automatically converted to
 
 By default Cargo assumes main.rs a root crate (not lib.rs).
 Having both main.rs and lib.rs is common for executable crates.
+
+By default, everything is private in Rust.
+
+to avoid specifying all::submodule::scopes() 'use' directive can be used. It imports names into local scope.
+Best practice: when importing functions, better to import the module rather then functions directly.
