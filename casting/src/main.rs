@@ -78,4 +78,8 @@ fn main() {
     }
 
     // transmute only checks if types have ythe same size.
+
+
+    // "Deref" coercions
+    
 }
