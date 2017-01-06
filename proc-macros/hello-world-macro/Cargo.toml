@@ -1,0 +1,11 @@
+[package]
+name = "hello-world-macro"
+version = "0.1.0"
+authors = ["xenzh <xenzh0@gmail.com>"]
+
+[dependencies]
+syn = "0.10"
+quote = "0.3"
+
+[lib]
+proc-macro = true

@@ -1,0 +1,7 @@
+[package]
+name = "proc-macros"
+version = "0.1.0"
+authors = ["xenzh <xenzh0@gmail.com>"]
+
+[dependencies]
+hello-world-macro = { path = "hello-world-macro" }
